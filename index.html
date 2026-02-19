@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Henrique | Portfólio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header Animation */
+        header {
+            animation: fadeDown 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gabriel Henrique</h1>
+    <h2>Desenvolvedor Backend | C++ | Python | SQL</h2>
+    <a href="#projetos" class="btn">Ver Projetos</a>
+</header>
+
+<section id="sobre" class="reveal">
+    <h3>Sobre Mim</h3>
+    <p>
+        Sou formado em <span class="highlight">Análise e Desenvolvimento de Sistemas</span>, mas minha relação com tecnologia sempre foi além da formação. Tenho interesse genuíno em compreender como sistemas funcionam — sejam eles técnicos, humanos ou organizacionais.
+        Tenho facilidade em conectar ideias, perceber padrões e transformar situações complexas em estruturas simples e funcionais. Gosto de observar antes de agir, entender antes de executar e construir soluções que façam sentido no todo, não apenas na parte.
+        Acredito que pensar bem é tão importante quanto saber fazer. Por isso, busco ambientes que valorizem raciocínio, curiosidade e evolução constante — onde seja possível crescer, contribuir e deixar uma marca através de soluções inteligentes e bem construídas.
+    </p>
+
+    <p>
+       <span class="highlight">Focused on backend development, clean architecture and performance optimization.</span>
+    </p>
+</section>
+
+<section id="habilidades" class="reveal">
+    <h3>Habilidades Técnicas</h3>
+    <div class="grid">
+        <div class="card">Python</div>
+        <div class="card">C++</div>
+        <div class="card">SQL</div>
+        <div class="card">Git & GitHub</div>
+    </div>
+</section>
+
+<section id="projetos" class="reveal">
+    <h3>Projeto</h3>
+    <div class="grid">
+
+        <div class="card">
+            <h4>Desafios Técnicos</h4>
+            <p>Processamento em tempo real (baixa latência)</p>
+            <p>Mapeamento de landmarks da mão</p>
+            <p>Conversão de gestos em eventos de teclado</p>
+            <p>Otimização de FPS</p>
+            <p>Tratamento de ruído e falsos positivos</p>
+        </div>
+
+        <div class="card">
+            <h4>Stack Tecnológica</h4>
+            <p>
+                Desenvolvi um sistema de controle gestual em tempo real utilizando visão computacional (OpenCV + MediaPipe + Math + AutoGUI).
+                O sistema interpreta movimentos das mãos e os converte em comandos de teclado com baixa latência,
+                criando uma interface natural entre usuário e computador/jogos.
+                O projeto está em fase ativa de aprimoramento, com melhorias voltadas para redução de latência,
+                aumento de robustez e refinamento dos algoritmos de reconhecimento gestual.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Arquitetura</h4>
+            <p>Captura de vídeo → OpenCV</p>
+            <p>Detecção de mãos → MediaPipe</p>
+            <p>Cálculo vetorial → Math</p>
+            <p>Automação de input → AutoGUI</p>
+            <p>Loop contínuo com controle de estado</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contato" class="reveal">
+    <h3>Contato</h3>
+    <div class="contact">
+        <p>Email: <a href="mailto:gh42284@gmail.com">gh42284@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-pereira-339203265" target="_blank">linkedin.com/in/gabriel-pereira-339203265</a></p>
+        <p>GitHub: <a href="https://github.com/SsuncioN" target="_blank">github.com/SsuncioN</a></p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Gabriel Henrique. Desenvolvido com foco em performance e impacto.
+</footer>
+
+<script>
+window.addEventListener("scroll", function() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+            element.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

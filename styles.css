@@ -1,0 +1,243 @@
+:root {
+    --primary: #7300ff;
+    --primary-soft: rgba(115, 0, 255, 0.4);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 20% 20%, #111 0%, #0a0a0a 40%, #000 100%);
+    color: #f5f5f5;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glow ambiental */
+body::after {
+    content: "";
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(115,0,255,0.15), transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Barra superior glow */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #7300ff, #5d00cf, #39007e);
+    box-shadow: 0 0 15px #39007e;
+    z-index: 999;
+}
+
+/* Header */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    animation: fadeInDown 1.2s ease forwards;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(115, 0, 255, 0.8);
+}
+
+header h2 {
+    font-weight: 300;
+    margin-top: 10px;
+    color: #cccccc;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Botão premium */
+.btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.6s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 25px var(--primary);
+    transform: scale(1.05);
+}
+
+/* Seções */
+section {
+    padding: 100px 10%;
+    position: relative;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-soft), transparent);
+}
+
+/* Títulos */
+h3 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+h3::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Cards premium */
+.card {
+    background: rgba(26,26,26,0.8);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    border: 1px solid #222;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.4s ease;
+}
+
+.card:hover::before {
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(115, 0, 255, 0.7);
+}
+
+.card p {
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+/* Contato */
+.contact a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* Destaque */
+.highlight {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 50px 10%;
+    background: #000;
+    color: #777;
+    border-top: 1px solid #111;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    section { padding: 70px 7%; }
+}
