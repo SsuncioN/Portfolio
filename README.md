@@ -3,7 +3,7 @@
 Portfólio pessoal desenvolvido com HTML e CSS para apresentar meus projetos, habilidades e experiências como desenvolvedor.
 
 ## 🌐 Acesse Online
-👉 https://gabriel-pereira-dev.netlify.app
+https://gabriel-pereira-dev.netlify.app
 
 ## 🛠 Tecnologias Utilizadas
 - HTML5
